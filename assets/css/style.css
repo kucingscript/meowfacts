@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
+:root {
+  --light-cyan: hsl(193, 38%, 86%);
+  --neon-green: hsl(150, 100%, 66%);
+  --grayish-blue: #313a48;
+  --dark-grayish-blue: #202733;
+  --white: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  background-color: var(--dark-grayish-blue);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+main {
+  width: min(90%, 33rem);
+  text-align: center;
+  background-color: var(--grayish-blue);
+  border-radius: 10px;
+  padding: 3.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  position: relative;
+}
+
+.title {
+  color: var(--neon-green);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 1rem;
+}
+
+.quotes {
+  font-size: 1.3rem;
+  color: var(--light-cyan);
+  padding: 0 1rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.line {
+  width: 90%;
+  height: 2rem;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.line::before,
+.line::after {
+  content: "";
+  background-color: var(--white);
+  opacity: 0.2;
+  width: 70%;
+  height: 1px;
+}
+
+.line__image {
+  background-image: url("../images/line.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 10rem;
+  height: 2rem;
+}
+
+.dice__image {
+  position: absolute;
+  cursor: pointer;
+  background-color: var(--neon-green);
+  background-image: url("../images/dice.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  left: 50%;
+  transform: translate(-50%, 30%);
+  transition: all 0.3s;
+}
+
+.dice__image:hover {
+  box-shadow: -1px 1px 58px 10px rgba(82, 225, 168, 0.5);
+}
+
+@media screen and (max-width: 576px) {
+  .quotes {
+    font-size: 1rem;
+  }
+}
